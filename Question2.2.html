@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Réalisation d'une page WEB</title>
+</head>
+<body>
+
+
+<p>
+<script language="javascript">
+var images=new Array();
+images[0]="https://news.bitcoin.com/wp-content/uploads/2018/05/deep-web.jpg";
+images[1]="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/240px-HTML5_logo_and_wordmark.svg.png";
+images[2]="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/260px-CSS3_logo_and_wordmark.svg.png";
+var cpt=0;
+
+function changeimages()
+{
+ document.getElementById("img" ).src=images[cpt];
+ id = setTimeout("suivant()",2000);
+}
+
+function precedent(){
+        clearTimeout(id);
+        cpt--;
+        if(cpt < 0){cpt=images.length-1;};
+        changeimages();
+        }
+
+function suivant(){
+        clearTimeout(id);
+        cpt++;
+        if(cpt >= images.length){cpt=0;};
+        changeimages();
+}
+
+</script>
+</head>
+ 
+ 
+<body onLoad="changeimages()">
+
+
+<center><img src="https://img.freepik.com/icones-gratuites/bouton-rond-gauche_318-77543.jpg?size=338&ext=jpg" onClick="precedent()"> <img src="https://www.limesurvey.org/media/kunena/attachments/56654/picto-suivant.png" onClick="suivant()"></td></center>
+</br><br><br>
+<center><img id="img" name="img" src="" alt="diaporama"/></center>
+
+</p>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
